@@ -1,0 +1,141 @@
+body {
+background-color: black;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+text-align: center;
+}
+hr {
+width: 500px;
+max-width: 90%;
+height: 2px;
+background-color: white;
+border: 0;
+}
+.hidden {
+display: none;
+}
+/* setup screen */
+#setup-screen {
+width: 400px;
+max-width: 90%;
+margin: 0 auto;
+padding: 20px;
+background-color: black;
+border: 3px solid white;
+border-radius: 0;
+}
+.name-row {
+display: flex;
+flex-direction: column;
+text-align: left;
+margin-bottom: 15px;
+}
+
+.name-row label {
+font-size: 18px;
+margin-bottom: 5px;
+}
+.name-row input {
+height: 40px;
+font-size: 20px;
+padding: 0 10px;
+background-color: black;
+color: white;
+border: 2px solid white;
+border-radius: 0;
+}
+.name-row input::placeholder {
+color: gray;
+}
+#setup-error {
+min-height: 20px;
+color: white;
+font-weight: bold;
+}
+/* scoreboard */
+#scoreboard {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-bottom: 10px;
+}
+.score-box {
+width: 130px;
+padding: 8px;
+background-color: black;
+border: 2px solid white;
+border-radius: 0;
+
+display: flex;
+flex-direction: column;
+}
+.score-box.active-player {
+background-color: white;
+color: black;
+}
+.score-name {
+font-size: 16px;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
+}
+.score-value {
+font-size: 36px;
+font-weight: bold;
+}
+#status {
+font-size: 24px;
+min-height: 30px;
+margin: 10px 0;
+}
+/* board */
+#game-board {
+width: 450px;
+height: 450px;
+max-width: 90vw;
+max-height: 90vw;
+margin: 0 auto;
+background-color: black;
+color: white;
+border: 0;
+
+display: grid;
+grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+/* white lines only BETWEEN cells, no outer frame */
+.game-cell {
+border: 0 solid white;
+font-size: 100px;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.game-cell:nth-child(-n+6) { /* rows 1 and 2 */
+border-bottom-width: 4px;
+}
+.game-cell:nth-child(3n+1), /* columns 1 and 2 */
+.game-cell:nth-child(3n+2) {
+border-right-width: 4px;
+}
+.winning-game-cell {
+background-color: white;
+color: black;
+}
+/* ---------- buttons ---------- */
+.game-button {
+height: 50px;
+min-width: 150px;
+border: 2px solid white;
+border-radius: 0;
+background-color: black;
+color: white;
+font-size: 20px;
+margin: 20px 5px 0;
+
+cursor: pointer;
+}
+.game-button:hover {
+background-color: white;
+color: black;
+}
